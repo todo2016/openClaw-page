@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>提交需求 - OpenClaw</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .req-form-container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .req-form {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .form-title {
+      text-align: center;
+      margin-bottom: 32px;
+      font-size: 1.8rem;
+      color: #1a1a2e;
+    }
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #333;
+    }
+    .form-group label span {
+      color: #e53e3e;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #7c3aed;
+    }
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .form-hint {
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: 4px;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #7c3aed, #6d28d9);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+    }
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #7c3aed;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    .tips {
+      background: #f8f7ff;
+      border-left: 4px solid #7c3aed;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .tips strong {
+      color: #7c3aed;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero" style="padding: 40px 20px;">
+    <div class="hero-content">
+      <h1 class="logo" style="font-size: 2.5rem;">🎯 需求中心</h1>
+      <p class="tagline">提交你的想法，我们来完成剩下的</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="req-form-container">
+      <a href="index.html" class="back-link">← 返回首页</a>
+
+      <div class="tips">
+        <strong>💡 提示：</strong>填写需求后点击提交，会跳转到 GitHub Issues 页面预填好内容。确认后即可提交，Agent 会自动接收并开始处理。
+      </div>
+
+      <form class="req-form" id="reqForm">
+        <h2 class="form-title">📝 提交新需求</h2>
+
+        <div class="form-group">
+          <label for="reqTitle">需求标题 <span>*</span></label>
+          <input type="text" id="reqTitle" name="reqTitle" placeholder="例如：用户登录模块开发" required maxlength="50">
+          <p class="form-hint">简洁明了，50字以内，会作为分支名的一部分</p>
+        </div>
+
+        <div class="form-group">
+          <label for="reqType">需求类型</label>
+          <select id="reqType" name="reqType">
+            <option value="feature">✨ 新功能</option>
+            <option value="improvement">🔧 功能优化</option>
+            <option value="bugfix">🐛 Bug修复</option>
+            <option value="docs">📚 文档更新</option>
+            <option value="other">🔀 其他</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="reqPriority">优先级</label>
+          <select id="reqPriority" name="reqPriority">
+            <option value="P1">🔴 P1 - 紧急</option>
+            <option value="P2" selected>🟡 P2 - 一般</option>
+            <option value="P3">🟢 P3 - 低</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="reqDesc">需求描述 <span>*</span></label>
+          <textarea id="reqDesc" name="reqDesc" placeholder="详细描述你想要的功能或解决的问题..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="reqExtra">补充信息</label>
+          <textarea id="reqExtra" name="reqExtra" placeholder="其他补充：参考链接、截图、预期效果等（选填）"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">🚀 提交到 GitHub Issues</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>Built with 🤖 by OpenClaw Multi-Agent Team · 2026</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById('reqForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const title = document.getElementById('reqTitle').value.trim();
+      const type = document.getElementById('reqType').value;
+      const priority = document.getElementById('reqPriority').value;
+      const desc = document.getElementById('reqDesc').value.trim();
+      const extra = document.getElementById('reqExtra').value.trim();
+
+      const typeLabels = {
+        feature: '✨ feature',
+        improvement: '🔧 enhancement',
+        bugfix: '🐛 bug',
+        docs: '📚 documentation',
+        other: '🔀 question'
+      };
+
+      const typeEmoji = {
+        feature: '✨',
+        improvement: '🔧',
+        bugfix: '🐛',
+        docs: '📚',
+        other: '🔀'
+      };
+
+      const body = `## 需求描述
+
+${typeEmoji[type]} **类型：** ${type}
+${priority} **优先级：** ${priority}
+
+### 详细说明
+${desc}
+
+${extra ? `### 补充信息\n${extra}` : ''}
+
+---
+*💡 此需求由 OpenClaw 需求入口页面提交*`;
+
+      const issueTitle = `${typeEmoji[type]} ${title}`;
+
+      const githubUrl = `https://github.com/todo2016/openClaw-page/issues/new?title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(body)}&labels=${typeLabels[type]}`;
+
+      window.open(githubUrl, '_blank');
+    });
+  </script>
+</body>
+</html>
