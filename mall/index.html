@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>商城首页</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-search">
+      <input type="text" placeholder="搜索商品">
+      <div class="icon">🔔</div>
+    </div>
+  </div>
+
+  <!-- Banner -->
+  <div class="banner">
+    <img src="https://picsum.photos/800/300?random=1" alt="banner" id="bannerImg">
+    <div class="banner-dots">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Categories -->
+  <div class="categories" id="categories"></div>
+
+  <!-- Flash Sale -->
+  <div class="flash-sale">
+    <div class="section-header">
+      <div class="section-title">
+        🔥 限时秒杀
+        <span class="tag">距结束</span>
+      </div>
+      <div class="countdown">
+        <span id="hour">02</span><span class="colon">:</span><span id="min">13</span><span class="colon">:</span><span id="sec">45</span>
+      </div>
+    </div>
+    <div class="flash-products" id="flashProducts"></div>
+  </div>
+
+  <!-- Recommended -->
+  <div class="recommended">
+    <div class="section-header">
+      <div class="section-title">精选推荐</div>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+
+  <!-- Bottom Nav -->
+  <div class="bottom-nav">
+    <a href="#" class="nav-item active">
+      <span class="icon">🏠</span>
+      首页
+    </a>
+    <a href="#" class="nav-item">
+      <span class="icon">📦</span>
+      分类
+    </a>
+    <a href="#" class="nav-item">
+      <span class="icon">🛒</span>
+      购物车
+    </a>
+    <a href="#" class="nav-item">
+      <span class="icon">👤</span>
+      我的
+    </a>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
