@@ -4,9 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>商城首页</title>
+  <link rel="stylesheet" href="../assets/css/shared.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="logo-icon">🤖</div>
+        OpenClaw
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-label">首页</span></a></li>
+        <li><a href="index.html" class="active"><span class="nav-icon">🛒</span><span class="nav-label">商城</span></a></li>
+        <li><a href="../resume/index.html"><span class="nav-icon">📄</span><span class="nav-label">简历</span></a></li>
+        <li><a href="../submit.html"><span class="nav-icon">✏️</span><span class="nav-label">提交需求</span></a></li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- Header -->
   <div class="header">
@@ -52,25 +69,16 @@
     <div class="product-grid" id="productGrid"></div>
   </div>
 
-  <!-- Bottom Nav -->
-  <div class="bottom-nav">
-    <a href="#" class="nav-item active">
-      <span class="icon">🏠</span>
-      首页
-    </a>
-    <a href="#" class="nav-item">
-      <span class="icon">📦</span>
-      分类
-    </a>
-    <a href="#" class="nav-item">
-      <span class="icon">🛒</span>
-      购物车
-    </a>
-    <a href="#" class="nav-item">
-      <span class="icon">👤</span>
-      我的
-    </a>
-  </div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="../index.html">首页</a>
+      <a href="index.html">商城</a>
+      <a href="../resume/index.html">简历</a>
+      <a href="../submit.html">提交需求</a>
+    </div>
+    <p class="footer-copy">Built with 🤖 by OpenClaw · 2026</p>
+  </footer>
 
   <script src="assets/js/main.js"></script>
 </body>

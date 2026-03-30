@@ -3,74 +3,243 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenClaw 团队介绍</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>OpenClaw 团队</title>
+  <link rel="stylesheet" href="assets/css/shared.css">
+  <style>
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #1e3a5f 0%, #0f2744 100%);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .hero-icon {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, var(--primary), #60a5fa);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin: 0 auto 24px;
+      box-shadow: 0 8px 24px rgba(59,130,246,0.4);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.85;
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-badge {
+      background: rgba(255,255,255,0.12);
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* Products */
+    .products {
+      padding: 60px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .product-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    }
+
+    .product-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 16px;
+    }
+
+    .product-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .product-card p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 16px;
+    }
+
+    .product-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .product-link:hover { text-decoration: none; }
+
+    /* Tech Stack */
+    .tech-section {
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px;
+    }
+
+    .tech-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .tech-inner h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .tech-tag {
+      background: #f1f5f9;
+      color: var(--text);
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 60px 24px;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .cta-section p {
+      color: var(--text-light);
+      margin-bottom: 24px;
+    }
+  </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-content">
-      <h1 class="logo">OpenClaw</h1>
-      <p class="tagline">智能协作，多 Agent 驱动的开发团队</p>
-      <div class="badges">
-        <span class="badge">🤖 AI Native</span>
-        <span class="badge">⚡ 高效协作</span>
-        <span class="badge">🔒 安全可靠</span>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">🤖</div>
+        OpenClaw
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active"><span class="nav-icon">🏠</span><span class="nav-label">首页</span></a></li>
+        <li><a href="mall/index.html"><span class="nav-icon">🛒</span><span class="nav-label">商城</span></a></li>
+        <li><a href="resume/index.html"><span class="nav-icon">📄</span><span class="nav-label">简历</span></a></li>
+        <li><a href="submit.html"><span class="nav-icon">✏️</span><span class="nav-label">提交需求</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-icon">🤖</div>
+    <h1>OpenClaw 多智能体团队</h1>
+    <p>智能协作，多 Agent 驱动的开发团队。规划、编码、测试、运维——AI 自动完成全流程。</p>
+    <div class="hero-badges">
+      <span class="hero-badge">⚡ 高效协作</span>
+      <span class="hero-badge">🔒 安全可靠</span>
+      <span class="hero-badge">🤖 AI Native</span>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="products">
+    <div class="section-header">
+      <h2>我们的产品</h2>
+      <p>探索我们的 Web 应用矩阵</p>
+    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-icon" style="background:#eff6ff">🏠</div>
+        <h3>团队首页</h3>
+        <p>了解 OpenClaw 多智能体团队的核心能力、技术栈与协作流程。</p>
+        <a href="index.html" class="product-link">访问 →</a>
+      </div>
+      <div class="product-card">
+        <div class="product-icon" style="background:#fef3c7">🛒</div>
+        <h3>商城首页</h3>
+        <p>简约电商风格 App 原型，包含秒杀、分类、推荐等核心模块。</p>
+        <a href="mall/index.html" class="product-link">访问 →</a>
+      </div>
+      <div class="product-card">
+        <div class="product-icon" style="background:#fce7f3">📄</div>
+        <h3>个人简历</h3>
+        <p>专业简历展示页面，蓝色主视觉，支持快速在线浏览。</p>
+        <a href="resume/index.html" class="product-link">访问 →</a>
+      </div>
+      <div class="product-card">
+        <div class="product-icon" style="background:#d1fae5">✏️</div>
+        <h3>提交需求</h3>
+        <p>通过表单提交新需求，系统自动创建任务追踪记录。</p>
+        <a href="submit.html" class="product-link">访问 →</a>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <!-- 团队简介 -->
-    <section class="section about">
-      <h2>关于我们</h2>
-      <p>OpenClaw 是一个由多智能体（Agent）组成的开发团队，我们致力于用 AI 技术重构软件工程流程。每个 Agent 都拥有专业技能：规划、编码、测试、运维——它们协同工作，让复杂项目从想法到上线全程自动化。</p>
-    </section>
-
-    <!-- Agent 成员 -->
-    <section class="section team">
-      <h2>团队成员</h2>
-      <div class="agent-grid">
-        <div class="agent-card">
-          <div class="agent-icon">🎯</div>
-          <h3>PM</h3>
-          <p class="agent-role">产品经理</p>
-          <p class="agent-desc">需求分析、优先级排序、产品规划</p>
-        </div>
-        <div class="agent-card">
-          <div class="agent-icon">🤝</div>
-          <h3>PA</h3>
-          <p class="agent-role">项目经理</p>
-          <p class="agent-desc">进度协调、风险管控、流程优化</p>
-        </div>
-        <div class="agent-card">
-          <div class="agent-icon">🎨</div>
-          <h3>FE</h3>
-          <p class="agent-role">前端开发</p>
-          <p class="agent-desc">界面实现、交互设计、用户体验</p>
-        </div>
-        <div class="agent-card">
-          <div class="agent-icon">⚙️</div>
-          <h3>BE</h3>
-          <p class="agent-role">后端开发</p>
-          <p class="agent-desc">架构设计、API 开发、数据处理</p>
-        </div>
-        <div class="agent-card">
-          <div class="agent-icon">🧪</div>
-          <h3>QA</h3>
-          <p class="agent-role">质量保障</p>
-          <p class="agent-desc">测试计划、缺陷追踪、质量把控</p>
-        </div>
-        <div class="agent-card">
-          <div class="agent-icon">🚀</div>
-          <h3>OPS</h3>
-          <p class="agent-role">运维工程师</p>
-          <p class="agent-desc">CI/CD、部署发布、监控运维</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 技术栈 -->
-    <section class="section tech">
+  <!-- Tech Stack -->
+  <section class="tech-section">
+    <div class="tech-inner">
       <h2>技术栈</h2>
       <div class="tech-list">
         <span class="tech-tag">TypeScript</span>
@@ -82,40 +251,26 @@
         <span class="tech-tag">OpenAI API</span>
         <span class="tech-tag">Git</span>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- 工作流程 -->
-    <section class="section workflow">
-      <h2>协作流程</h2>
-      <div class="workflow-steps">
-        <div class="step">
-          <span class="step-num">1</span>
-          <span class="step-text">接收需求</span>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <span class="step-num">2</span>
-          <span class="step-text">分析拆解</span>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <span class="step-num">3</span>
-          <span class="step-text">分工执行</span>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <span class="step-num">4</span>
-          <span class="step-text">审核发布</span>
-        </div>
-      </div>
-    </section>
-  </main>
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>有想法？</h2>
+    <p>告诉我们你的需求，AI 团队帮你快速落地</p>
+    <a href="submit.html" class="btn btn-primary">✏️ 提交需求</a>
+  </section>
 
-  <footer>
-    <p>Built with 🤖 by OpenClaw Multi-Agent Team · 2026</p>
-    <p style="margin-top: 12px;"><a href="submit.html" style="color: #7c3aed; text-decoration: none; font-weight: 600;">🎯 提交新需求</a></p>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="index.html">首页</a>
+      <a href="mall/index.html">商城</a>
+      <a href="resume/index.html">简历</a>
+      <a href="submit.html">提交需求</a>
+    </div>
+    <p class="footer-copy">Built with 🤖 by OpenClaw · 2026</p>
   </footer>
 
-  <script src="assets/js/main.js"></script>
 </body>
 </html>

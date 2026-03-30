@@ -1,20 +1,4 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-  --primary: #3b82f6;
-  --bg: #f8fafc;
-  --card: #ffffff;
-  --text: #1e293b;
-  --text-light: #64748b;
-  --border: #e2e8f0;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-}
+/* Resume page specific styles — globals are in shared.css */
 
 /* Header */
 .hero {
@@ -239,17 +223,4 @@ body {
   font-size: 0.9rem;
 }
 
-/* Footer */
-footer {
-  background: #0f2744;
-  color: rgba(255,255,255,0.6);
-  text-align: center;
-  padding: 24px;
-  font-size: 0.85rem;
-}
-
-@media (max-width: 600px) {
-  .name { font-size: 1.6rem; }
-  .exp-header { flex-direction: column; }
-  .edu-item { flex-direction: column; align-items: flex-start; }
-}
+/* Footer now in shared.css */
